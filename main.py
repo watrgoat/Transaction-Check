@@ -21,9 +21,11 @@ print("isConnected:", web3.isConnected())
 
 latest_block = web3.eth.get_block('latest')
 
-for count, transaction_hex in enumerate(latest_block['transactions']):
-    print()
-    print(f"transaction num {count}: {transaction_hex}")
+print(latest_block['baseFeePerGas']/10**9)
+
+# for count, transaction_hex in enumerate(latest_block['transactions']):
+#     print()
+#     print(f"transaction num {count}: {transaction_hex}")
 
 for i in range(10):
     transaction = web3.eth.get_transaction_by_block('latest', i)
